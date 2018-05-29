@@ -1,0 +1,37 @@
+html {
+	--color-background: #000000;/* Az egésznek a kerete */
+	--color-headerbackground: #000000; /* Header,footer bg ofc */
+	--color-middlebackground: #000000; /* Középső/Tartalom blokk */
+	--color-menubackground: #000000; /* ... */
+	--color-accent: #00ff10; /*cuccok */
+	--color-link: #00ff10;	/* linkek */
+	--color-spare-1: #00ff10;  /* header felirat */
+	--color-spare-4: #000000;  /* Oldal cimkék háttere */
+
+	/* Random colorok(lefelé) ha valamit stilizálni szeretnél */
+	--color-accent-light: #E57373; /* Material Red 300 */
+	--color-accent-dark: #B71C1C; /* Material Red 900 */
+	--color-spare-2: #E91E63; /* Material Pink 500 */
+	--color-spare-3: #9C27B0; /* Material Purple 500 */
+	--color-text-body: #00ff10;
+	--color-text-highlight: #000000;
+	--color-global-gray2: #000000;
+}
+::selection{
+	color: black;
+	background-color:#00ff10;
+}
+*{
+	color:#00ff10;
+	background-color:black;
+	border-color: #00ff10;
+}
+.orarend-cella {
+	background-color: black;
+	border-style:solid;
+}
+.orarend-cellb {
+	background-color: #00ff10;
+	color:black;
+	border-style:solid;
+}

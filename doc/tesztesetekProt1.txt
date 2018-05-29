@@ -1,0 +1,19 @@
+Tesztesetek - Jupiter I. prototípus
+
+Bejelentkezési képernyő:
+	Azonosító és Jelszó textfield , illetve egy radio button , amivel a jogosultságot és a felületet tudjuk kiválasztani.
+	Üresen hagyott szövegdoboz nem lehet.
+	Rossz adatok esetén piros hiba label.
+	
+	Helyes adatok esetén rendben.
+	Helyes adatok esetén szóköz a stringen kívül. Rendben
+	
+Stílus kiválasztása: Kezdetleges , de rendben
+
+Login után üres helyre dob.
+
+Órarend menü , személyes adatok: Helyes a listázás
+
+vizsgák listázása , rendben van.
+
+Kijelentkezés: Valószínűleg bugos.

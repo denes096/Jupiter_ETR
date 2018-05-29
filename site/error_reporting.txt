@@ -1,0 +1,1 @@
+linux.inf.u-szeged.hu szervert nem tudtam elérni, így trac-ben maradt lezáratlan ticket.

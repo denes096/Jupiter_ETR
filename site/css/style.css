@@ -1,0 +1,474 @@
+/***************************************************************
+							HTML
+****************************************************************/
+html,body {
+	margin: 0;
+	color: var(--color-text-body);
+	background-color: var(--color-background);
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+
+	/* Global variables */
+	--color-global-gray1 : #FEFEFE; /* Material Gray 50 */
+	--color-global-gray2 : #EEEEEE; /* Material Gray 200 */
+	--color-global-gray3 : #BDBDBD; /* Material Gray 400 */
+	--color-global-gray4 : #757575; /* Material Gray 600 */
+	--color-global-gray5 : #424242; /* Material Gray 800 */
+	--color-global-gray6 : #212121; /* Material Gray 900 */
+}
+.pagename{
+	display: inline-block;
+    background-color: var(--color-spare-4);
+	width: auto;
+    border-style: solid;
+    border-width: 1.5px;
+}
+.pagename h2{
+    display: inline-block;
+    margin: 15 200 15 8px;
+}
+.header{
+    height: auto;
+    overflow: hidden;
+    color:var(--color-spare-1);
+    background-color:var(--color-headerbackground);
+}
+.middle{
+    height: auto;
+    background-color:var(--color-middlebackground);
+    border-style: solid;
+    border-color: transparent;
+    border-width: 10px;
+}
+a {
+	color: var(--color-link);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif;
+}
+.container{
+	min-height:72%;
+	position:relative;
+}
+.body{
+	padding-bottom: 100px;
+}
+.footer{
+	position: absolute;
+	bottom: 0;
+	width:100%;
+	height: 100px;
+	background-color:var(--color-headerbackground);
+}
+/***************************************************************
+							Login
+****************************************************************/
+.loginbody{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color:var(--color-background);
+}
+.loginmiddle{
+    height: 70%;
+    background-image: url("../jupiter.png");
+    background-position: right;
+    background-repeat:no-repeat;
+}
+
+.logoLeftTable{
+	float: left;
+}
+.rightLogos{
+	float: right;	
+}
+.logosTable{
+	height: 50px;
+	padding-top: 10px;
+	
+}
+.hp1{
+    position: relative;
+    left: 25%;
+    font-size: 40px;
+    margin-top: 30px;
+}
+.hp2{
+    position: relative;
+    left: 39%;
+    font-size: 30px;
+    margin-bottom: 20;
+}
+.hc{
+	position: relative;
+	Top :  10%;
+}
+.loginformintext, .formintext {
+	display: inline-block;
+	width: 100px;
+	font-weight: bold;
+}
+.loginformin, .formin{
+	height: 40px;
+}
+.loginform, .form{
+	width:45%;
+	position: relative;
+    top: 10%;
+    left: 2.5%;	
+}
+.loginformdiv, .formdiv{
+	    margin-top: 2%;
+}
+.loginformbutton, .formbutton{
+	position: relative;
+	left: 10%;
+	width: 80px;
+	height: 40px;
+}
+.loginradio{
+	position: relative;
+	margin-left: 4%;
+	width: 20px;
+	height: 20px;
+}
+/***************************************************************
+							Menu
+****************************************************************/
+.menu{
+	height:auto;
+	background-color: var(--color-menubackground);
+}
+.menuspan{ 
+	position:relative;
+	text-decoration: none;
+	font-size:  25px;
+	margin-right: 30px;
+	color:var(--color-accent);
+}
+.menuspan .menupoints {
+    visibility: hidden;
+    left: 0%;
+    top: 85%;
+    width: 130%;
+    text-align: left;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: var(--color-menubackground);
+    color:var(--color-accent);
+}
+.menuspan .menupoints:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+}
+.menuspan:hover .menupoints {
+    visibility: visible;
+    opacity: 1;
+}
+.menupoints a{ 
+	text-decoration: none;
+	color:var(--color-accent);
+}
+.exitbutton{ 
+	float:right;
+	margin-right:0;
+}
+.style{
+	position:relative;
+	float:right;
+	margin-right:30px;
+	font-size:  25px;
+	color:var(--color-accent);
+}
+.style .menupoints {
+    visibility: hidden;
+    left: 0%;
+    top: 85%;
+    width: 200%;
+    background-color: black;
+    text-align: left;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: var(--color-menubackground);
+    color:var(--color-accent);
+}
+.style .menupoints:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+}
+.style:hover .menupoints {
+    visibility: visible;
+    opacity: 1;
+}
+/***************************************************************
+							Messages
+****************************************************************/
+.messagesmenu{ 
+	float:Left;
+	width:20%;
+	height:20%;
+	border-style: solid;
+	border-width:2px;
+}
+.messagesmenuheader{
+	height:20%;
+	text-align:center;
+	font-size:20px;
+	border-style: solid;
+	border-bottom-width:2px;
+}
+.messagesmenupoints{
+	height:80%;
+}
+.messagesmenupoints a{
+	margin-top:10px;
+	text-align:left;
+	font-size:13px;
+	text-decoration: none;
+}
+.messages{ 
+	position:relative;
+	width: 70%;
+	height: auto;
+	margin: 10%;
+	/*color:var(--color-accent);*/
+}
+.message{ 
+	position:relative;
+	text-decoration: none;
+	font-size:  25px;
+	margin-right: 30px;
+	color:var(--color-accent);
+}
+.message .messagetext {
+    visibility: hidden;
+    left: 0%;
+    bottom: 100%;
+    width: 100%;
+    text-align: left;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: var(--color-menubackground);
+    color:var(--color-accent);
+}
+.message .messagetext:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+}
+.message:hover .messagetext {
+    visibility: visible;
+    opacity: 1;
+}
+.messageformbox{
+	width: 30%;
+	position: relative;
+    margin-top: 2%;
+    left: 2.5%;	
+}
+.messageintext{
+	display: inline-block;
+	width: 100px;
+	margin-bottom: 1%;
+	font-weight: bold;
+}
+.messagebutton{
+	position: relative;
+	width: 80px;
+	height: 40px;
+}
+/***************************************************************
+							Courses
+****************************************************************/
+.query-table > tbody > tr > th {
+	background-color: var(--color-accent);
+	color: var(--color-text-highlight);
+	font-weight: 500;
+	padding: 10px;
+}
+.query-table > tbody > tr > td {
+	background-color: var(--color-middlebackground);
+	text-align: center;
+	padding: 5px;
+}
+.full-width {
+	width: 95%;
+	margin: 5px auto 5px auto;
+}
+.newCourseParent {
+	display: flex;
+}
+.newCourseButton {
+	height: 30px;
+	align-self: center;
+	margin-left: 30px;
+}
+.modifyCourseButton {
+	float: right;
+	height: 30px;
+	align-self: center;
+	margin-left: 30px;
+}
+
+.titleParent {
+	margin-left: 30px;
+}
+
+.buttonsParent {
+	margin-right: 30px;
+	margin-bottom: 10px;
+	float: right;
+}
+
+/***************************************************************
+							New Course
+****************************************************************/
+.inputContainer {
+	margin: 20px;
+	float:left;
+}
+.innerDiv1 {
+	float: left;
+}
+.innerDiv2 {
+	float: left;
+	clear: left;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.newItemForm {
+	float: left;
+}
+.errorDiv {
+	margin-left: 20px;
+	color: red;
+}
+
+
+/***************************************************************
+							Exams
+****************************************************************/
+.newExamParent {
+	display: flex;
+}
+.newExamButton {
+	height: 30px;
+	align-self: center;
+	margin-left: 30px;
+}
+.modifyExamButton {
+	height: 30px;
+	align-self: center;
+	margin-left: 30px;
+	float: right;
+}
+
+
+/***************************************************************
+							Timetable
+****************************************************************/
+.orarend-cella {
+	background-color: white;
+	border-style:solid;
+}
+.orarend-cellb {
+	background-color: beige;
+	border-style:solid;
+}
+.orarend-span{
+	margin:10;
+	display:flex;
+} 
+
+/***************************************************************
+							StatisztikÃƒÂ¡k
+****************************************************************/
+.stat_row {
+	width: 100%;
+	height: 400px;
+}
+.stat-cella{
+	background-color: white;
+	border-style:solid;
+	width:200px;
+	text-align:left;
+}
+.stat-cellb{
+	background-color: beige;
+	border-style:solid;
+	width:200px;
+	text-align:center;
+}
+.szak-semester{
+	color:red;
+	background-color:black;
+}
+
+.stat_col {
+	min-width: 45%;
+	max-width: 45%;
+	max-height: 100%;
+	padding: 5px;
+}
+
+.stat_div {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#chartTable {
+	table-layout: fixed;
+}
+
+.goog-tooltip {
+	z-index: 200;
+}
+
+
+
+.stat-empty {
+	display: flex;
+	color: var(--color-global-gray4);
+	margin: auto;
+}
+
+.stat-empty-div {
+	border: 2px solid var(--color-accent-light);
+}
+
+.stat-empty-msg-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.stat-empty-msg-div > h4 {
+	margin: 1px;
+}

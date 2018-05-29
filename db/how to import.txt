@@ -1,0 +1,9 @@
+0. Üritsd ki az eddigi adatokat
+1. WIN+R
+2. CMD
+3. cd (aholvan)\xampp\mysql\bin
+4. mysql --default-character-set=utf8 -u root -p
+5. enter
+6. connect jupiter
+7. source (aholvan)\osszesitett.sql
+8. Vársz amíg kész

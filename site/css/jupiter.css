@@ -1,0 +1,19 @@
+html {
+	--color-background: #404040;/* Az egésznek a kerete */
+	--color-headerbackground: #434343; /* Header,footer bg ofc */
+	--color-middlebackground: #cccccc; /* Középső/Tartalom blokk */
+	--color-menubackground: black; /* ... */
+	--color-accent: #fff; /* cuccok */
+	--color-link: #fff;	/* linkek */
+	--color-spare-1: #FD9927;  /* header felirat */
+	--color-spare-4: #a9a9a9;  /* Oldal cimkék háttere */
+	
+	/* Random colorok(lefelé) ha valamit stilizálni szeretnél */
+	
+	--color-accent-light: #E57373; /* Material Red 300 */
+	--color-accent-dark: #B71C1C; /* Material Red 900 */
+	--color-spare-2: #E91E63; /* Material Pink 500 */
+	--color-spare-3: #9C27B0; /* Material Purple 500 */
+	--color-text-body: #111111;
+	--color-text-highlight: #000000;
+}

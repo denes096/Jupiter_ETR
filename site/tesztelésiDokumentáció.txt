@@ -1,0 +1,373 @@
+Jupiter Dokumentáció-FONTOS , hogy az azonos felületek nem kerültek dokumentálásra!!
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+										Teszteljárások
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ID: TP_0001
+TestCases: TC_0001... TC_000x  x= a könyvtárakban szereplő ( Sessionhoz kötött ) fileok.
+Description: Oldalak elérése közvetlenül, bejelentkezés nélkül.
+Step0: Nyissuk meg az oldalt és kattintsunk az url mezőre.
+Step1: írjuk be egy létező oldal url címét.
+Step2: Nyomjuk meg az Entert
+Step3: Ellenőrizzük az eredményt. Elvárt eredmény: továbbítás a $SITE
+oldalra
+
+ID: TP_0002
+TestCases: TC_0001, TC_0002, TC_0003
+Description: bejelentkezés tesztelése
+Step0: Nyissuk meg az oldalt és kattintsunk a bejelentkezésre
+Step1: Az username szövegdobozba írjuk be a $UNAME szöveget
+Step2: Az password szövegdobozba írjuk be a $PASS szöveget
+Step3: Válasszuk ki a kívánt felületet $RadioButton.
+Step4: Nyomjuk meg az $LOGIN gombot
+Step5: Ellenőrizzük az eredményt. Elvárt eredmény: továbbítás a $SITE
+oldalra
+								//////////////////////
+							   /    Hallgató		/
+							  //////////////////////
+ID: TP_0003
+TestCases: TC_0001, TC_0002, TC_0003, TC_0004... TC_0021
+Description: Hallgatói Felület tesztelése
+Step0: válasszuk ki a menüpontok összes lehetséges pontját
+Step1: Kattintsunk rá.
+Step4: Ellenőrizzük az eredményt. Elvárt eredmény: $MSG üzenet és továbbítás a $SITE
+oldalra
+
+								//////////////////////
+							   /      Oktató  		/
+							  //////////////////////
+
+ID: TP_0004
+TestCases: TC_0001, TC_0002, TC_0003, TC_0004... TC_0007
+Description: Oktató Felület tesztelése
+Step0: válasszuk ki a menüpontok összes lehetséges pontját
+Step1: Kattintsunk rá.
+Step4: Ellenőrizzük az eredményt. Elvárt eredmény: $MSG üzenet és továbbítás a $SITE
+oldalra
+
+								//////////////////////
+							   /      Admin  		/
+							  //////////////////////
+
+
+ID: TP_0005
+TestCases: TC_0001, TC_0002, TC_0003, TC_0004... TC_0007
+Description: Admin Felület tesztelése
+Step0: válasszuk ki a menüpontok összes lehetséges pontját
+Step1: Kattintsunk rá.
+Step4: Ellenőrizzük az eredményt. Elvárt eredmény: $MSG üzenet és továbbítás a $SITE
+oldalra
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+											Tesztesetek:
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ID: TC_0001..TC_000x
+TP: TP_0001
+Description: Oldal elérése Session nélkül.
+Input(s): URL=localhost/kurzusok.php
+Action: nyomjuk meg az Enter gombot
+Expected output: továbbítás a
+$SITE=login.php oldalra
+
+ID: TC_0001
+TP: TP_0002
+Description: bejelentkezés helyes.
+Input(s): $UNAME=ANVAAA.SZE $PASS=Körte $RadioButton=Hallgató
+Action: nyomjuk meg az Login gombot
+Expected output: továbbítás a
+$SITE=kurzusok.php oldalra
+
+ID: TC_0002
+TP: TP_0002
+Description: bejelentkezés rossz adatokkal.
+Input(s): $UNAME=ANVAAA.SZE $PASS=Alma $RadioButton=Hallgató
+Action: nyomjuk meg az Login gombot
+Expected output:$MSG=Hibás felhasználónév vagy jelszó! és továbbítás a
+$SITE=Login.php oldalra 
+
+ID: TC_0003
+TP: TP_0002
+Description: bejelentkezés SQL injecttel.
+Input(s): $UNAME=DROP TABLE admin; $PASS=Alma $RadioButton=Hallgató
+Action: nyomjuk meg az Login gombot
+Expected output:$MSG=Hibás felhasználónév vagy jelszó! és továbbítás a
+$SITE=Login.php oldalra 
+								
+					------Személyes Adatok--------
+ID: TC_0001
+TP: TP_0003
+Description: Személyes Adatok.
+Input(s): -
+Action: nyomjuk meg az Személyes Adatok gombot
+Expected output: Továbbytás a személyes adatok oldalra. Atatok kiírása OK.
+					----------Kurzusok------------
+ID: TC_0002
+TP: TP_0003
+Description: Kurzusok.
+Input(s): $Szak = szak $Félév=félév
+Action: válasszuk ki az adatokat
+Expected output: Kurzusok listázása OK.
+
+ID: TC_0003
+TP: TP_0003
+Description: Kurzus lista megnézése.
+Input(s): kurzuskód
+Action: Katt a kurzuskódra.
+Expected output: Kurzuson lévő hallgatók listázása OK.
+
+ID: TC_0004
+TP: TP_0003
+Description: Kurzus lista megnézése.
+Input(s): kurzuskód
+Action: Katt a kurzuskódra.
+Expected output: Kurzuson lévő hallgatók listázása OK.
+
+ID: TC_0005
+TP: TP_0003
+Description: Új kurzus felvétel érvényes előteltétellel.
+Input(s): kurzuskód
+Action: Kurzus kijelölése , majd felvétel gomb megnyomása.
+Expected output: Sikeres felvétel továbbítás kurzusok.php Sitera.
+
+
+ID: TC_0006
+TP: TP_0003
+Description: Új kurzus felvétel érvénytelen előteltétellel.
+Input(s): kurzuskód
+Action: Kurzus kijelölése , majd felvétel gomb megnyomása.
+Expected output: A kurzus felvétel nem sikerült $MSG továbbítás a kurzusFelvetel.php sitera.
+
+ID: TC_0007
+TP: TP_0003
+Description: Kurzus módosítása(átjelentkezés) Törlése.
+Input(s): -
+Action: Kurzus kijelölése , majd Átjelentkezés , Törlés gomb megnyomása.
+Expected output: Átjelentkezés esetén továbbítás  kurzusAtjelentkezes.php oldalra siker esetén továbbítás a kurzusok.php sitera. Törlésnél továbbítás kurzusok.php sitera.
+
+					----------Vizsgák------------
+ID: TC_0008
+TP: TP_0003
+Description: Vizsgák.
+Input(s): $Szak = szak $Félév=félév
+Action: válasszuk ki az adatokat
+Expected output: Vizsgák listázása OK.
+
+ID: TC_0009
+TP: TP_0003
+Description: Vizsgák lista megnézése.
+Input(s): kurzuskód
+Action: Katt a kurzuskódra.
+Expected output: Vizsgák lévő hallgatók listázása OK.
+
+ID: TC_0010
+TP: TP_0003
+Description: Vizsgák lista megnézése.
+Input(s): kurzuskód
+Action: Katt a kurzuskódra.
+Expected output: Vizsgák lévő hallgatók listázása OK.
+
+ID: TC_0011
+TP: TP_0003
+Description: Új Vizsga felvétel érvényes előteltétellel.
+Input(s): kurzuskód
+Action: Vizsga kijelölése , majd felvétel gomb megnyomása.
+Expected output: Sikeres felvétel továbbítás vizsga.php Sitera.
+
+
+ID: TC_0012
+TP: TP_0003
+Description: Új kurzus felvétel érvénytelen előteltétellel.
+Input(s): kurzuskód
+Action: Vizsga kijelölése , majd felvétel gomb megnyomása.
+Expected output: A Vizsga felvétel nem sikerült $MSG továbbítás a vizsgaFelvetel.php sitera.
+
+ID: TC_0013
+TP: TP_0003
+Description: Vizsga módosítása(átjelentkezés) Törlése.
+Input(s): -
+Action: Vizsga kijelölése , majd Átjelentkezés , Törlés gomb megnyomása.
+Expected output: Átjelentkezés esetén továbbítás  vizsgaAtjelentkezes.php oldalra siker esetén továbbítás a vizsga.php sitera. Törlésnél továbbítás vizsga.php sitera.
+
+					----------Eredmények------------
+ID: TC_00014
+TP: TP_0003
+Description: Eredmények.
+Input(s):  $Félév=félév
+Action: válasszuk ki az adatokat
+Expected output: Eredmények listázása OK.
+
+					----------Üzenetek------------
+ID: TC_00015
+TP: TP_0003
+Description: Üzenet küldés helyes adatokkal.
+Input(s):  $Dest=cél kód , $tágy=tárgy , $üzenet=üzi
+Action: Töltsük ki a fieldeket , küldés gomb
+Expected output: $MSG=Az üzenetet sikeresen elküldtük.
+
+ID: TC_00016
+TP: TP_0003
+Description:SQL injekció.
+Input(s):  $Dest=DROP TABLE Admin , $tágy=tárgy , $üzenet=üzi
+Action: Töltsük ki a fieldeket , küldés gomb
+Expected output: $MSG=Az üzenetet nem küldtük el. Injekció nem működik , de nem ír hibát!!!!
+
+ID: TC_00017
+TP: TP_0003
+Description: Üzenet küldés helytelen/üres adatokkal.
+Input(s):  $Dest=Null , $tágy=tárgy , $üzenet=üzi
+Action: Töltsük ki a fieldeket , küldés gomb
+Expected output: $MSG=Az üzenetet nem küldtük el. HIBA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+					----------Órarend------------
+ID: TC_00018
+TP: TP_0003
+Description: Órarend megnézése.
+Input(s):  $semester=szemeszter;
+Action: Mehet gomb
+Expected output: Órarend megjelenik. OK
+
+					----------Statisztikák------------
+ID: TC_00019
+TP: TP_0003
+Description: Statisztikák megnézése.
+Input(s):  $semester=szemeszter;
+Action: Mehet gomb
+Expected output: Statisztika megjelenik. OK
+
+				----------Stílusok------------
+ID: TC_00020
+TP: TP_0003
+Description: Stílusok megnézése.
+Input(s):  $style=Stílus;
+Action: Katt a stílusra
+Expected output: Stílus  változik. OK
+
+			----------Kijelentkezés------------
+ID: TC_00021
+TP: TP_0003
+Description: Kijelentkezés.
+Input(s):  -
+Action: Katt a kijelentkezésre
+Expected output: Kijelentkezés , destroy Session . OK
+
+			----------Új kurzus létrehozása------------
+ID: TC_0001
+TP: TP_0004
+Description: Új kurzus létrehozása helyes adatokkal.
+Input(s):  
+Kurzus kód Tárgy kód Név Szemeszter Férőhely Helyszín Időpont Megjegyzés
+Action: Katt a Mentése
+Expected output: Létrehozva . OK
+
+ID: TC_0002
+TP: TP_0004
+Description: Új kurzus létrehozása helytelen adatokkal.
+Input(s):  
+Kurzus kód Tárgy kód Név Szemeszter Férőhely Helyszín Időpont Megjegyzés
+Action: Katt a Mentése
+Expected output: $MSG=Hibás adatok! A kurzus létrehozása nem sikerült .
+
+ID: TC_0003
+TP: TP_0004
+Description: Új kurzus létrehozása Üres adatokkal.
+Input(s):  
+Kurzus kód Tárgy kód Név Szemeszter Férőhely Helyszín Időpont Megjegyzés
+Action: Katt a Mentése
+Expected output: $MSG=Adatok megadása kötelező! .
+				----------Módosítás------------
+ID: TC_0004
+TP: TP_0004
+Description: Kurzus Módosítása üres adatokkal.
+Input(s):  
+Kurzus kód Tárgy kód Név Szemeszter Férőhely Helyszín Időpont Megjegyzés
+Action: Katt a Mentése
+Expected output: $MSG=Adatok megadása kötelező! .
+
+ID: TC_0005
+TP: TP_0004
+Description: kurzus Módosítása helytelen adatokkal.
+Input(s):  
+Kurzus kód Tárgy kód Név Szemeszter Férőhely Helyszín Időpont Megjegyzés
+Action: Katt a Mentése
+Expected output: $MSG=Hibás adatok! A kurzus módosítása nem sikerült .
+			----------Értékelés------------
+ID: TC_0006
+TP: TP_0004
+Description: Kurzus értékelés.
+Input(s): Select option
+Action: Kiválasztjuk a jegyet , mehet gomb
+Expected output: Siker esetén frissíti az oldalt OK .
+
+			----------Statisztika------------
+ID: TC_0007
+TP: TP_0004
+Description: Statisztikák megnézése.
+Input(s): semester
+Action: Kiválasztjuk a félévet 
+Expected output: Statisztikák listázása , lehetőség grafikus felületre .
+
+ID: TC_0007
+TP: TP_0004
+Description: Statisztikák megnézése .
+Input(s): semester
+Action: Kattintás grafikusan gombra
+Expected output: Statisztikák listázása grafikusan , továbbír statisztikak_graph.php-ra .
+
+			---------------Adminok-----------
+
+ID: TC_0001
+TP: TP_0005
+Description: Adminok Listázása .
+Input(s): -
+Action: Kattintás admin gombra
+Expected output: Adminok listázása , továbbítás adminok.php-ra OK.
+
+			---------------Oktatók-----------
+
+ID: TC_0002
+TP: TP_0005
+Description: Oktatók Listázása .
+Input(s): -
+Action: Kattintás oktatók gombra
+Expected output: oktatók listázása , továbbítás felhasznalo_oktato.php-ra OK.
+
+			---------------Hallgatók-----------
+
+ID: TC_0003
+TP: TP_0005
+Description: Hallgatók Listázása .
+Input(s): -
+Action: Kattintás Hallgatók gombra
+Expected output: Hallgatók listázása , továbbítás felhasznalo_hallgato.php-ra OK.
+
+			---------------Hallgatók,Oktató hozzáadása-----------
+			
+ID: TC_0004
+TP: TP_0005
+Description: Hallgatók,oktatók felvétele helyes adatokkal  .
+Input(s): katt az új felvétele gombra.
+Action: Kattintás mehet gombra
+Expected output: Hallgatók,oktatók hozzáadása , továbbítás felhasznalo_hallgato.php-ra OK.
+
+ID: TC_0005
+TP: TP_0005
+Description: Hallgatók,oktatók felvétele rossz adatokkal  .
+Input(s): katt az új felvétele gombra.
+Action: Kattintás mehet gombra
+Expected output: $MSG Hibás adatok! , továbbítás felhasznalo_hallgato.php-ra OK.
+
+ID: TC_0006
+TP: TP_0005
+Description: Hallgatók,oktatók felvétele üres adatokkal  .
+Input(s): katt az új felvétele gombra.
+Action: Kattintás mehet gombra
+Expected output: $MSG Üres adatok! , továbbítás felhasznalo_hallgato.php-ra OK.
+
+ID: TC_0007
+TP: TP_0005
+Description: SQL Injekció  .
+Input(s): katt az új felvétele gombra.  DROP TABLE admin
+Action: Kattintás mehet gombra
+Expected output: $MSG Hibás adatok , továbbítás felhasznalo_hallgato.php-ra OK.
+

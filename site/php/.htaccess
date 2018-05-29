@@ -1,0 +1,4 @@
+order allow,deny
+<FilesMatch "(^dest.php$)|(^stats.php$)">
+Allow from all
+</FilesMatch>
